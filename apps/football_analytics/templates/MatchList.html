@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchList</title>
+</head>
+<body>
+    {% block content %}
+    <h1>АКТУАЛЬНЫЕ МАТЧИ</h1>
+    {% for match in matches %}
+        <h2>
+           <span>Матч: {{ match }}</span>
+           <br>
+           <span>Счет: {{ match.home_team_score }} - {{ match.away_team_score }}</span>
+        </h2>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

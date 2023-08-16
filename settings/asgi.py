@@ -1,5 +1,5 @@
 """
-ASGI config for sport_analytics project.
+ASGI config for settings project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

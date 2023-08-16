@@ -1,34 +1,37 @@
+
+
 from pathlib import Path
 import sys
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-# C://Program Files/Django
 sys.path.append(BASE_DIR)
-# C://Program Files/Django/apps
 sys.path.append(os.path.join(BASE_DIR, 'apps'))
 
-# Ключ за деплоя 
-SECRET_KEY = 'django-insecure-@pk$565$hna1i)%#=siwav%+9ycl**1e+c850iu4^iebo8!006'
 
-# Режим дебага
+SECRET_KEY = 'django-insecure-k2#9i_3z@)6+0z@2pvm2=5^3)m#mho%#=a(a!#9zmawqvd^6%v'
+
+
 DEBUG = True
 
-# Все разрешённые хосты
 ALLOWED_HOSTS = []
 
-# Установленные приложения
-INSTALLED_APPS = [
+
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'football_analytics.apps.FootballAnalyticsConfig'
 ]
+
+PROJECT_APPS = [
+    'football_analytics.apps.FootballAnalyticsConfig',
+]
+
+INSTALLED_APPS = PROJECT_APPS + DJANGO_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -40,10 +43,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Путь до файла urls.py
 ROOT_URLCONF = 'settings.urls'
 
-# Настройка шаблонов. html файлы
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -62,13 +63,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'settings.wsgi.application'
 
-# Текущая рабочая для проекта база данных
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -85,23 +87,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Язык приложения
-LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'Asia/Almaty'
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
 STATIC_URL = 'static/'
-STATIC_ROOT = 'static/'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = 'media/'
 
-# Шайтан штука
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
