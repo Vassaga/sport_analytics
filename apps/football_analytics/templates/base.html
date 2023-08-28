@@ -6,7 +6,9 @@
  </style>
 <header>
   <div class="ad">
-    <a href="https://rb.ru/opinion/bannernaya-reklama/" class="reclama"><img src="/static/images/baner3.jpeg" alt="Landing Page"/></a>
+    {% for banner in active_banners %}
+      <a href="https://rb.ru/opinion/bannernaya-reklama/" class="reclama"><img src="{{banner.banner_file.url}}" alt="{{ banner.name }} banner" /></a>
+    {% endfor %}
   </div>
   <hr>
   <br>
@@ -15,7 +17,9 @@
 {% block content %} {% endblock content %}
 <footer>
   <div class="ad">
-    <a href="https://rb.ru/opinion/bannernaya-reklama/" class="reclama"><img src="\static\images\baner3.jpeg" alt="Landing Page" /></a>
+    {% for banner in active_banners %}
+      <a href="https://rb.ru/opinion/bannernaya-reklama/" class="reclama"><img src="{{banner.banner_file.url}}" alt="{{ banner.name }} banner" /></a>
+    {% endfor %}
   </div>
       <hr>
     <h2>© 2023 LomovVladislavProduction</h2>
